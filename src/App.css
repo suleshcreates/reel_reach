@@ -1,0 +1,155 @@
+.app-shell {
+  position: relative;
+  min-height: 100vh;
+}
+
+.topbar {
+  position: fixed;
+  top: 20px;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+  pointer-events: none;
+  transition: transform 0.4s var(--transition-lux);
+}
+
+.topbar.topbar-hidden {
+  transform: translateY(-120%);
+}
+
+.topbar-inner {
+  pointer-events: auto;
+  max-width: 1200px;
+  width: 92%;
+  margin: 0 auto;
+  min-height: 72px;
+  padding: 0 32px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+  background: rgba(15, 23, 42, 0.7);
+  backdrop-filter: blur(20px) saturate(180%);
+  -webkit-backdrop-filter: blur(20px) saturate(180%);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 24px;
+  box-shadow: 
+    0 20px 40px rgba(0, 0, 0, 0.3),
+    inset 0 0 0 1px rgba(255, 255, 255, 0.05);
+}
+
+.brand-mark {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  transition: transform 0.3s ease;
+  text-decoration: none;
+}
+
+.brand-title {
+  background: linear-gradient(135deg, #ffffff 0%, var(--brand-blue) 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-family: var(--font-display);
+  font-size: 1.3rem;
+  font-weight: 900;
+  letter-spacing: -0.04em;
+  line-height: 1;
+}
+
+.brand-subtitle {
+  color: var(--brand-blue);
+  font-family: var(--font-ui);
+  font-size: 0.6rem;
+  font-weight: 800;
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+  opacity: 0.8;
+}
+
+.topbar-nav {
+  display: flex;
+  align-items: center;
+  gap: 32px;
+}
+
+.topbar-nav a {
+  position: relative;
+  color: var(--text-muted);
+  font-size: 0.8rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  transition: color 0.3s ease;
+}
+
+.topbar-nav a::after {
+  content: "";
+  position: absolute;
+  bottom: -4px;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background: var(--brand-blue);
+  transition: width 0.3s var(--transition-lux);
+  border-radius: 2px;
+}
+
+.topbar-nav a:hover {
+  color: var(--text-light);
+}
+
+.topbar-nav a:hover::after {
+  width: 100%;
+}
+
+.topbar-cta {
+  min-height: 42px;
+  padding: 0 20px;
+  border-radius: 14px;
+  background: var(--brand-blue);
+  color: #ffffff;
+  display: inline-flex;
+  align-items: center;
+  font-size: 0.75rem;
+  font-weight: 800;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  transition: all 0.3s var(--transition-lux);
+  box-shadow: 0 8px 16px -4px rgba(59, 130, 246, 0.4);
+}
+
+.topbar-cta:hover {
+  transform: translateY(-2px) scale(1.02);
+  background: var(--brand-blue-hover);
+  box-shadow: 0 12px 24px -4px rgba(59, 130, 246, 0.5);
+}
+
+@media (max-width: 1024px) {
+  .topbar-nav {
+    display: none;
+  }
+}
+
+@media (max-width: 768px) {
+  .topbar {
+    top: 12px;
+  }
+  
+  .topbar-inner {
+    width: 94%;
+    padding: 0 20px;
+    min-height: 64px;
+    border-radius: 18px;
+  }
+
+  .brand-title {
+    font-size: 1.15rem;
+  }
+
+  .topbar-cta {
+    display: none;
+  }
+}
+

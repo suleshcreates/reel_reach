@@ -1,0 +1,122 @@
+.faq {
+  padding: 80px 5%;
+  background: #F0F4FF;
+  position: relative;
+}
+
+.faq .section-tag {
+  display: flex;
+  justify-content: center;
+}
+
+.faq .section-title {
+  color: #0D0D0D !important;
+  font-weight: 900 !important;
+  margin-bottom: 24px;
+  text-align: center;
+}
+
+.faq .section-copy {
+  color: #4B5563 !important;
+  font-family: var(--font-marathi);
+  max-width: 600px;
+  font-weight: 500;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.faq-list {
+  max-width: 800px;
+  margin: 64px auto 0;
+  display: flex;
+  flex-direction: column;
+}
+
+.faq-item {
+  background: #ffffff;
+  border: 1px solid #DBEAFE;
+  border-radius: 12px;
+  margin-bottom: 12px;
+  overflow: hidden;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.faq-item:hover {
+  border-color: #2563EB;
+  box-shadow: 0 4px 12px rgba(37,99,235,0.06);
+}
+
+.faq-item.active {
+  background: #EFF6FF;
+  border-color: #2563EB;
+}
+
+.faq-q {
+  padding: 24px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 20px;
+}
+
+.faq-q span:first-child {
+  color: #0D0D0D;
+  font-size: 1.1rem;
+  font-weight: 700;
+  line-height: 1.4;
+}
+
+.faq-icon {
+  width: 24px;
+  height: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(37,99,235,0.1);
+  color: #2563EB;
+  border-radius: 50%;
+  font-size: 1.2rem;
+  font-weight: 400;
+  flex-shrink: 0;
+  transition: all 0.3s ease;
+}
+
+.faq-item.active .faq-icon {
+  background: #2563EB;
+  color: #ffffff;
+  transform: rotate(180deg);
+}
+
+.faq-a {
+  max-height: 0;
+  overflow: hidden;
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  padding: 0 24px;
+}
+
+.faq-item.active .faq-a {
+  max-height: 500px;
+  padding-bottom: 24px;
+}
+
+.faq-a p {
+  color: #4B5563;
+  font-size: 1rem;
+  line-height: 1.6;
+  font-weight: 500;
+}
+
+@media (max-width: 768px) {
+  .faq {
+    padding: 60px 5%;
+  }
+
+  .faq-q {
+    padding: 20px;
+  }
+
+  .faq-q span:first-child {
+    font-size: 1rem;
+  }
+}
